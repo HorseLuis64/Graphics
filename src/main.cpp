@@ -63,6 +63,23 @@ int main()
 	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
 	glCompileShader(fragmentShader);
 	
+	//creation of shader program, combines all the shaders to render
+	unsigned int shaderProgram;
+	shaderProgram = glCreateProgram();
+	glAttachShader(shaderProgram, vertexShader);
+	glAttachShader(shaderProgram, fragmentShader);
+	glLinkProgram(shaderProgram);
+
+	//apparantely, when we attatch the shader, it creates a copy, so
+	//we no longer need the original ones
+	glDeleteShader(vertexShader);
+	glDeleteShader(fragmentShader);
+
+	glUseProgram(shaderProgram);
+
+	//indicate opengl how to treat the data is in the shaders
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
 	//main window loop, cmon you know this
 	while (!glfwWindowShouldClose(window))
 	{

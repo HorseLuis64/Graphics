@@ -1,0 +1,45 @@
+OPENGL: all buffers have an id unsigned int
+GL_STREAM_DRAW: the data is set only once and used just few times
+GL_STATIC_DRAW: the data is set only once but used a lot of times
+GL_DYNAMIC_DRAW: the data changes a lot and used a lot
+
+graphics rendering consist in shaders, speciffically, a vertex data[], that
+1. vertex shader, calculate the 3d positions given, and it transform it in the 2d positions of the screen
+2. shape/geometry shader, makes another primitives of the mesh, if its, square = two triangles
+3. shape assembly , makes a strip bewtween the resulting shapes, "making a strip" (line)
+4. fragmentation/rasterization, converts the mesh in its pixel form, it draws the mesh in pixels (discarding data that the user dont see)
+5. color/fragment shader, it gives color to the pixels, as light, shades, solid, etc
+6. alpha and blending, opacity and the depth of the pixel, so it performs calculations if another object is in front
+
+VBO: VERTEX BUFFER OBJECT: an array of vertex data (vertices and positions)
+
+
+there are two main shaders that the programmer have to configurate in opengl
+1. Vertex shader, to defain the positions.
+2. Fragment shader, to defain the colors
+
+the main structure is:
+the GSL (opengl shader language)
+const char* shaderSource = version/type/main function
+
+unsigned int shader = glCreateShader;
+glshareshader(shader, sizeOfArguments, shdaerSource, null)
+glCompilshader(shader)
+
+later, we create the program shader, wich attache and link all the shaders previously to use them
+after gluseprogram, all drawing instructions will be for the program specified
+
+but, theres a catch, even do we pass the positions, opengl doesnt know how to treat them, that includes
+the type of data, the layout wich is positioned the data, the number of arguments, etc
+
+glVertexAttribPointer takes 5 parameters
+1. wich vertex attribute we want to configure, in the GSL code of our vertex shader, we specified its location
+in 0, so, its saved at position 0, so we want to access that
+2. the size of the vertex, the number of arguments passed, this case, 3 points (triangle)
+3. the type of data, if its an integer, float, etc ( just numeric values btw)
+4.this is to normalize the data (if they are integers) i dont understand yet what it does
+5.its the stride (pasos en español), so basically, all vertex data is next to each other in 32 bits (4bytes),
+so, its an array of bites that would be like (for a triangle): 0....4....8....12........... and it countinues until
+all values are covered, so, we have to determine how long is that size, just make a (number of points) * size of the 
+type of value
+6.wtf is a void*
