@@ -12,7 +12,8 @@ graphics rendering consist in shaders, speciffically, a vertex data[], that
 6. alpha and blending, opacity and the depth of the pixel, so it performs calculations if another object is in front
 
 VBO: VERTEX BUFFER OBJECT: an array of vertex data (vertices and positions)
-
+NOTE: WE HAVE TO ATTACH THIS TO AN OPENGL BUFFER, TO A VBO is
+GL_ARRAY_BUFFER
 
 there are two main shaders that the programmer have to configurate in opengl
 1. Vertex shader, to defain the positions.
@@ -23,7 +24,7 @@ the GSL (opengl shader language)
 const char* shaderSource = version/type/main function
 
 unsigned int shader = glCreateShader;
-glshareshader(shader, sizeOfArguments, shdaerSource, null)
+glshareshaderSource(shader, sizeOfArguments, shdaerSource, null)
 glCompilshader(shader)
 
 later, we create the program shader, wich attache and link all the shaders previously to use them

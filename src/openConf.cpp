@@ -46,11 +46,6 @@ namespace opg
 		//abstraction
 		//glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-		//VERTEX BUFFER OBJECT
-		unsigned int VBO;
-		glGenBuffers(1, &VBO);
-		//make the gl_array_buffer the vbo
-		glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
 		return window;
 	}
