@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/horseluis/HorseDev/Graphics/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/Cube_project.dir/src/main.cpp.o -c /home/horseluis/HorseDev/Graphics/src/main.cpp",
+  "file": "/home/horseluis/HorseDev/Graphics/src/main.cpp",
+  "output": "CMakeFiles/Cube_project.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/horseluis/HorseDev/Graphics/build",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/Cube_project.dir/includes/glad.c.o -c /home/horseluis/HorseDev/Graphics/includes/glad.c",
+  "file": "/home/horseluis/HorseDev/Graphics/includes/glad.c",
+  "output": "CMakeFiles/Cube_project.dir/includes/glad.c.o"
+},
+{
+  "directory": "/home/horseluis/HorseDev/Graphics/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/Cube_project.dir/src/openConf.cpp.o -c /home/horseluis/HorseDev/Graphics/src/openConf.cpp",
+  "file": "/home/horseluis/HorseDev/Graphics/src/openConf.cpp",
+  "output": "CMakeFiles/Cube_project.dir/src/openConf.cpp.o"
+}
+]
