@@ -73,9 +73,14 @@ int main()
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
 
-	//VERTEX BUFFER OBJECT
-	unsigned int VBO;
+	
+	//VERTEX BUFFER OBJECT AND VERTEX ARRAY OBJECT
+	unsigned int VBO, VAO;
 	glGenBuffers(1, &VBO);
+	glGenVertexArrays(1, &VAO);
+
+	//first bind the vertex array, because well, it will be attached later to VBO
+	glBindVertexArray(VAO);
 
 	//make the gl_array_buffer the vbo
 	//0.copy out vertices array in a buffer for Opengl to use
@@ -88,8 +93,12 @@ int main()
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
 	//2.Use our shader program when we want to render an object
-	glUseProgram(shaderProgram);
+	
+
+	
 	//main window loop, cmon you know this
 	while (!glfwWindowShouldClose(window))
 	{
@@ -101,6 +110,9 @@ int main()
 
 
 		//-------RENDERING----------
+		glUseProgram(shaderProgram);
+		glBindVertexArray(VAO);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 		glClearColor(0.12f, 0.45f, 0.7f, 0.9f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
