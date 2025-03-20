@@ -96,20 +96,27 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
+
+    glUseProgram(shaderProgram);
+    glBindVertexArray(VAO);
+
     // Main render loop
     while (!glfwWindowShouldClose(window))
     {
+        //---------------INPUT------------
         takeInput(window);
 
-        // Rendering
+        //-------------TODO: PHYSICS-----------
+
+
+        //----------------RENDERING----------
         glClearColor(0.12f, 0.45f, 0.7f, 0.9f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glUseProgram(shaderProgram);
-        glBindVertexArray(VAO);
+       
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
-        // Output
+        // ----------------OUTPUT-------------
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
