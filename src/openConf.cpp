@@ -32,11 +32,10 @@ namespace opg
 		//opengl its just a reference api, glad take charge of send the references of
 		// the functions to the OS specific libraries, and opengl acces it, glfw send the 
 		//specific references
-		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-		{
-			glfwTerminate();
-			
+		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+			std::cerr << "Failed to initialize GLAD" << std::endl;
 		}
+	
 
 
 		//tells opengl the area of rendering
