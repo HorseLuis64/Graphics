@@ -36,7 +36,7 @@ the type of data, the layout wich is positioned the data, the number of argument
 glVertexAttribPointer takes 5 parameters
 1. wich vertex attribute we want to configure, in the GSL code of our vertex shader, we specified its location
 in 0, so, its saved at position 0, so we want to access that
-2. the size of the vertex, the number of arguments passed, this case, 3 points (triangle)
+2. the quantity of vertices, the number of arguments passed, this case, 3 points (triangle)
 3. the type of data, if its an integer, float, etc ( just numeric values btw)
 4.this is to normalize the data (if they are integers) i dont understand yet what it does
 5.its the stride (pasos en español), so basically, all vertex data is next to each other in 32 bits (4bytes),

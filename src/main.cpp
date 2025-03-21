@@ -22,7 +22,7 @@ float vertices[] =
     -0.5f, -0.5f, 0.0f
 };
 
-int indices[] = 
+unsigned int indices[] = 
 {
     0, 1, 3,
     1, 2, 3
@@ -93,14 +93,17 @@ int main()
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
 
+    //1. bind Vertex Array Object
     glBindVertexArray(VAO);
     
+    //2.copy our vertices array in a Vertex Buffer Object to Opengl use it
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
+    //3. copy our indices order to a Element Buffer Object of opengl
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), &indices, GL_STATIC_DRAW);
-
+    //4.Then set the vertex attribute pointers (configure teh VAO)
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
@@ -111,6 +114,11 @@ int main()
     glUseProgram(shaderProgram);
     glBindVertexArray(VAO);
 
+
+    //this mf tells how to draw the shapes, if
+    //do it as a wireframe (lines), or fill the mesh
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     // Main render loop
     while (!glfwWindowShouldClose(window))
     {
@@ -131,6 +139,13 @@ int main()
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
+
+    //this is optional btw, since
+    //glfwTerminate do it automatically
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
+    glDeleteBuffers(1, &EBO);
+    glDeleteProgram(shaderProgram);
 
     glfwTerminate();
     return 0;
