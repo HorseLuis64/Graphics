@@ -88,6 +88,7 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o: /home/horseluis/HorseDev/Graphics/sr
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/codecvt.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
@@ -95,6 +96,7 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o: /home/horseluis/HorseDev/Graphics/sr
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
+  /usr/include/c++/13/bits/fstream.tcc \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/hash_bytes.h \
@@ -119,6 +121,7 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o: /home/horseluis/HorseDev/Graphics/sr
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_construct.h \
@@ -150,6 +153,7 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o: /home/horseluis/HorseDev/Graphics/sr
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/fstream \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
@@ -158,6 +162,7 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o: /home/horseluis/HorseDev/Graphics/sr
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -245,8 +250,10 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o: /home/horseluis/HorseDev/Graphics/sr
   /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
@@ -283,6 +290,7 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/codecvt.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
@@ -290,6 +298,7 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
+  /usr/include/c++/13/bits/fstream.tcc \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/hash_bytes.h \
@@ -314,6 +323,7 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_construct.h \
@@ -345,6 +355,7 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/fstream \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
@@ -353,6 +364,7 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -440,8 +452,10 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
   /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
@@ -468,6 +482,8 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
 
@@ -507,6 +523,8 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 
 /usr/include/c++/13/stdexcept:
 
+/usr/include/c++/13/sstream:
+
 /usr/include/c++/13/istream:
 
 /usr/include/c++/13/iostream:
@@ -533,8 +551,6 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 
 /usr/include/c++/13/debug/assertions.h:
 
-/usr/include/c++/13/cwctype:
-
 /usr/include/c++/13/cwchar:
 
 /usr/include/c++/13/cstdlib:
@@ -544,6 +560,10 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 /usr/include/c++/13/ext/atomicity.h:
 
 /usr/include/c++/13/cctype:
+
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/c++/13/bits/string_view.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
@@ -615,8 +635,6 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 
 /usr/include/features.h:
 
-/usr/include/c++/13/bits/string_view.tcc:
-
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/GLFW/glfw3.h:
@@ -628,6 +646,8 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 /usr/include/stdlib.h:
 
 /usr/include/dlfcn.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
 
 /usr/include/string.h:
 
@@ -709,8 +729,6 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 
 /usr/include/c++/13/backward/binders.h:
 
-/usr/include/c++/13/bits/stringfwd.h:
-
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/c++/13/bits/cpp_type_traits.h:
@@ -763,6 +781,8 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 
 /usr/include/c++/13/bits/locale_classes.tcc:
 
+/usr/include/c++/13/bits/codecvt.h:
+
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
 /usr/include/c++/13/typeinfo:
@@ -776,6 +796,8 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/c++/13/bits/exception.h:
+
+/usr/include/c++/13/fstream:
 
 /usr/include/c++/13/cstdio:
 
@@ -792,6 +814,12 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 /usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/c++/13/bits/exception_ptr.h:
+
+/usr/include/c++/13/bits/fstream.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/c++/13/bits/refwrap.h:
 
 /usr/include/errno.h:
 
@@ -825,9 +853,9 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
-/usr/include/c++/13/bits/std_abs.h:
-
 /usr/include/c++/13/bits/uses_allocator.h:
+
+/usr/include/c++/13/bits/std_abs.h:
 
 /usr/include/c++/13/bits/postypes.h:
 
@@ -849,9 +877,9 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 
 /usr/include/c++/13/bits/range_access.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+/usr/include/c++/13/cwctype:
 
-/usr/include/c++/13/bits/refwrap.h:
+/usr/include/c++/13/bits/sstream.tcc:
 
 /usr/include/c++/13/bits/stl_algobase.h:
 

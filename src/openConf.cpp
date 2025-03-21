@@ -1,6 +1,18 @@
 #include "openConf.h"
 namespace opg 
 {
+	std::string loadShaderSource(const char* filePath) {
+		std::ifstream file(filePath);
+		if (!file.is_open()) {
+			std::cerr << "Error al abrir el archivo de shader: " << filePath << std::endl;
+			return "";
+		}
+	
+		std::stringstream buffer;
+		buffer << file.rdbuf();
+		file.close();
+		return buffer.str();
+	}
 	
 	void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	{

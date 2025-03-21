@@ -1,18 +1,10 @@
 #include "openConf.h"
 
-const char* vertexShaderSource = "#version 330 core \n"
-"layout (location = 0) in vec3 aPos; \n"
-"void main()\n"
-"{\n"
-"	gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-"}\0";
+std::string vertexShaderCode = opg::loadShaderSource("/home/horseluis/HorseDev/Graphics/src/vertexShader.glsl");
+const char* vertexShaderSource = vertexShaderCode.c_str();
 
-const char* fragmentShaderSource = "#version 330 core \n"
-"out vec4 FragColor;\n"
-"void main()\n"
-"{\n"
-"	FragColor = vec4(0.9f, 0.1f, 0.1f, 1.0f);\n"
-"}\0";
+std::string fragmentShaderCode = opg::loadShaderSource("/home/horseluis/HorseDev/Graphics/src/fragmentShader.glsl");
+const char* fragmentShaderSource = fragmentShaderCode.c_str();
 
 float vertices[] =
 {
