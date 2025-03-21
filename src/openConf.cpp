@@ -8,7 +8,7 @@ namespace opg
 	}
 
 
-	GLFWwindow* glfwConfiguration()
+	GLFWwindow* glfwConfiguration(int a, int b)
 	{
 		glfwInit();
 		//configure aspects of glfw, first argument the option, second the setting
@@ -18,7 +18,7 @@ namespace opg
 
 
 
-		GLFWwindow* window = glfwCreateWindow(800, 800, "VENTANITA WOO", NULL, NULL);
+		GLFWwindow* window = glfwCreateWindow(a, b, "VENTANITA WOO", NULL, NULL);
 		if (window == NULL)
 		{
 			std::cout << "kkkk";

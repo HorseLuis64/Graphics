@@ -44,3 +44,8 @@ so, its an array of bites that would be like (for a triangle): 0....4....8....12
 all values are covered, so, we have to determine how long is that size, just make a (number of points) * size of the 
 type of value
 6.wtf is a void*
+
+
+TIME FOR THE JUICY PART 
+
+Element Buffer Objects (EBO);

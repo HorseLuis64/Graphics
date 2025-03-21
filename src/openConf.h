@@ -5,5 +5,5 @@
 
 namespace opg
 {
-	GLFWwindow* glfwConfiguration();
+	GLFWwindow* glfwConfiguration(int a, int b);
 };
