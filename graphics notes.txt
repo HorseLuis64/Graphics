@@ -49,3 +49,30 @@ type of value
 TIME FOR THE JUICY PART 
 
 Element Buffer Objects (EBO);
+
+basically this mfs just its just a buffer that takes a array of indices
+s its content, this is to organize the order of drawing, 
+the structure doesnt change very much, just insted of using 
+glDrawArrays, we use glDrawElements
+
+REMEMBER THIS STUPID
+
+drawArrays requires the next parameters
+1. the mesh of drawing, triangles, lines, etc
+2. the length of the array indices
+3. the data type ,glfloat glint, etc.
+4. THE INDEX WHERE IT STARTS, 0
+
+GLSL (the opengl shader language)
+
+its sintaxis is pretty similar to C, there are ins and outs
+to export or inport data, this is the way to communicate
+.glsl scripts with others, the are also the uniforms,
+wich is a global variable, so everybody can access to it,
+and, yeah, thats it, to acces a uniform value its with the function
+glgetUniformLocation(nameOfTheProgram, "nameOfTheVariable")
+//the program of use goes before this below
+glUniform4f(theLocationOfTheVariable, its values);
+
+
+

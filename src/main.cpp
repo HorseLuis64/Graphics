@@ -1,4 +1,5 @@
 #include "openConf.h"
+#include <cmath>
 
 std::string vertexShaderCode = opg::loadShaderSource("/home/horseluis/HorseDev/Graphics/src/vertexShader.glsl");
 const char* vertexShaderSource = vertexShaderCode.c_str();
@@ -8,10 +9,10 @@ const char* fragmentShaderSource = fragmentShaderCode.c_str();
 
 float vertices[] =
 {
-    -0.5f, 0.5f, 0.0f,
-    0.5f, 0.5f, 0.0f,
-    0.5f, -0.5f, 0.0f,
-    -0.5f, -0.5f, 0.0f
+    -0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
+     0.5f,  0.5f, 0.0f,   0.0f, 0.0f, 0.0f,
+     0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 0.0f,
+    -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 0.0f
 };
 
 unsigned int indices[] = 
@@ -28,6 +29,8 @@ void takeInput(GLFWwindow* window)
     }
 }
 
+//thanks gpt
+//{
 void checkShaderCompilation(unsigned int shader)
 {
     int success;
@@ -51,7 +54,7 @@ void checkProgramLinking(unsigned int program)
         std::cerr << "ERROR::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
     }
 }
-
+//}
 int main()
 {
     GLFWwindow* window = opg::glfwConfiguration(800, 800);
@@ -96,18 +99,27 @@ int main()
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), &indices, GL_STATIC_DRAW);
     //4.Then set the vertex attribute pointers (configure teh VAO)
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,  6 * sizeof(float), (void*)( 3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+
     glBindVertexArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+    
+
+    float time; 
+    float green; 
+    int vertexColorLocation; 
 
 
     glUseProgram(shaderProgram);
     glBindVertexArray(VAO);
 
 
-    //this mf tells how to draw the shapes, if
+    //this mf tells how to draw the shapes, if to
     //do it as a wireframe (lines), or fill the mesh
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -118,18 +130,29 @@ int main()
         takeInput(window);
 
         //-------------TODO: PHYSICS-----------
-
+ 
 
         //----------------RENDERING----------
         glClearColor(0.12f, 0.45f, 0.7f, 0.9f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-       
+        time = glfwGetTime();
+        green = (sin(time) / 2.0f) + 0.5f;
+
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT,  0);
 
+
+
+
+
+        //this is to find an uniform variable
+       // vertexColorLocation = glGetUniformLocation(shaderProgram, "sexyColor");
+       // glUniform4f(vertexColorLocation, 0.0f, green, 0.0f, 1.0f);
+       // glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT,  0);
         // ----------------OUTPUT-------------
         glfwSwapBuffers(window);
         glfwPollEvents();
+        
     }
 
     //this is optional btw, since
