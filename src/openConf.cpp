@@ -1,6 +1,41 @@
 #include "openConf.h"
 namespace opg 
 {
+
+	Shader::Shader(const char* vShaderPath, const char* fShaderPath, unsigned int* shaderProgram) : vShaderPath(vShaderPath), fShaderPath(fShaderPath), shaderProgram(shaderProgram)
+	{
+		createShaders();
+	}
+	
+	Shader::~Shader()
+	{
+
+	}
+
+	void Shader::createShaders()
+	{
+		std::string vPath = loadShaderSource(vShaderPath);
+		std::string fPath = loadShaderSource(fShaderPath);
+		
+		vShaderSource = vPath.c_str();
+		fShaderSource = fPath.c_str();
+
+		vertexShader = glCreateShader(GL_VERTEX_SHADER);
+		glShaderSource(vertexShader, 1, &vShaderSource, NULL);
+		glCompileShader(vertexShader);
+
+		fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+		glShaderSource(fragmentShader, 1, &fShaderSource, NULL);
+		glCompileShader(fragmentShader);
+
+		*shaderProgram = glCreateProgram();
+		glAttachShader(*shaderProgram, vertexShader);
+		glAttachShader(*shaderProgram, fragmentShader);
+		glLinkProgram(*shaderProgram);
+
+		glDeleteShader(vertexShader);
+		glDeleteShader(fragmentShader);
+	}
 	std::string loadShaderSource(const char* filePath) {
 		std::ifstream file(filePath);
 		if (!file.is_open()) {
