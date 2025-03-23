@@ -17,14 +17,16 @@ namespace opg
 			const char* vShaderSource;
 			unsigned int vertexShader;
 			unsigned int fragmentShader;
-			unsigned int* shaderProgram;
+			
 			void createShaders();
 		public:
-			Shader(const char* vShaderPath, const char *fShaderPath, unsigned int* shaderProgram);
+			Shader(const char* vShaderPat, const char *fShaderPat);
 			~Shader();
 			
-
-			
+			void createShaderProgram(unsigned int &shaderProgram);
+			unsigned int getVertex();
+			unsigned int getFragment();
+				
 	};
 
 	std::string loadShaderSource(const char* filePath);

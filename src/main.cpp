@@ -1,11 +1,11 @@
 #include "openConf.h"
 #include <cmath>
 
-std::string vertexShaderCode = opg::loadShaderSource("/home/horseluis/HorseDev/Graphics/src/vertexShader.glsl");
-const char* vertexShaderSource = vertexShaderCode.c_str();
+const char* vertexShaderCode = "/home/horseluis/HorseDev/Graphics/src/vertexShader.glsl";
+//const char* vertexShaderSource = vertexShaderCode.c_str();
 
-std::string fragmentShaderCode = opg::loadShaderSource("/home/horseluis/HorseDev/Graphics/src/fragmentShader.glsl");
-const char* fragmentShaderSource = fragmentShaderCode.c_str();
+const char* fragmentShaderCode = "/home/horseluis/HorseDev/Graphics/src/fragmentShader.glsl";
+//const char* fragmentShaderSource = fragmentShaderCode.c_str();
 
 float vertices[] =
 {
@@ -29,59 +29,15 @@ void takeInput(GLFWwindow* window)
     }
 }
 
-//thanks gpt
-//{
-void checkShaderCompilation(unsigned int shader)
-{
-    int success;
-    char infoLog[512];
-    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
-    if (!success)
-    {
-        glGetShaderInfoLog(shader, 512, NULL, infoLog);
-        std::cerr << "ERROR::SHADER::COMPILATION_FAILED\n" << infoLog << std::endl;
-    }
-}
 
-void checkProgramLinking(unsigned int program)
-{
-    int success;
-    char infoLog[512];
-    glGetProgramiv(program, GL_LINK_STATUS, &success);
-    if (!success)
-    {
-        glGetProgramInfoLog(program, 512, NULL, infoLog);
-        std::cerr << "ERROR::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
-    }
-}
-//}
 int main()
 {
     GLFWwindow* window = opg::glfwConfiguration(800, 800);
+    unsigned int shaderProgram;
+    opg::Shader shader(vertexShaderCode, fragmentShaderCode);
+   
+    shader.createShaderProgram(shaderProgram);
     
-    // Initializing and compiling the vertex shader
-    unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-    glCompileShader(vertexShader);
-    checkShaderCompilation(vertexShader);
-
-    // Initializing and compiling the fragment shader
-    unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-    glCompileShader(fragmentShader);
-    checkShaderCompilation(fragmentShader);
-
-    // Creating and linking the shader program
-    unsigned int shaderProgram = glCreateProgram();
-    glAttachShader(shaderProgram, vertexShader);
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
-    checkProgramLinking(shaderProgram);
-
-    // Deleting the shaders as they are now linked into our program
-    glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
-
     // Setting up the vertex data and buffers
     unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &VAO);

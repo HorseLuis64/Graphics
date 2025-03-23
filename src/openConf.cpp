@@ -1,8 +1,14 @@
 #include "openConf.h"
-namespace opg 
-{
 
-	Shader::Shader(const char* vShaderPath, const char* fShaderPath, unsigned int* shaderProgram) : vShaderPath(vShaderPath), fShaderPath(fShaderPath), shaderProgram(shaderProgram)
+
+//_-_-_-_-_-_-SHADER CLASS_-_-_-_-_-_-_-
+
+namespace opg
+{
+	void checkShaderCompilation(unsigned int shader);
+	void checkProgramLinking(unsigned int program);
+
+	Shader::Shader(const char* vShaderPat, const char* fShaderPat) : vShaderPath(vShaderPat), fShaderPath(fShaderPat)
 	{
 		createShaders();
 	}
@@ -23,19 +29,37 @@ namespace opg
 		vertexShader = glCreateShader(GL_VERTEX_SHADER);
 		glShaderSource(vertexShader, 1, &vShaderSource, NULL);
 		glCompileShader(vertexShader);
+		checkShaderCompilation(vertexShader);
 
 		fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 		glShaderSource(fragmentShader, 1, &fShaderSource, NULL);
 		glCompileShader(fragmentShader);
+		checkShaderCompilation(fragmentShader);
 
-		*shaderProgram = glCreateProgram();
-		glAttachShader(*shaderProgram, vertexShader);
-		glAttachShader(*shaderProgram, fragmentShader);
-		glLinkProgram(*shaderProgram);
+	}
 
+	void Shader::createShaderProgram(unsigned int &shaderProgram)
+	{
+		shaderProgram = glCreateProgram();
+		glAttachShader(shaderProgram, vertexShader);
+		glAttachShader(shaderProgram, fragmentShader);
+		glLinkProgram(shaderProgram);
+		checkProgramLinking(shaderProgram);
+	
 		glDeleteShader(vertexShader);
 		glDeleteShader(fragmentShader);
 	}
+
+	unsigned int Shader::getVertex()
+	{
+		return vertexShader;
+	}
+
+	unsigned int Shader::getFragment()
+	{
+		return fragmentShader;
+	}
+
 	std::string loadShaderSource(const char* filePath) {
 		std::ifstream file(filePath);
 		if (!file.is_open()) {
@@ -48,6 +72,40 @@ namespace opg
 		file.close();
 		return buffer.str();
 	}
+
+}
+
+namespace opg 
+{
+
+	//thanks gpt
+	//{
+	void checkShaderCompilation(unsigned int shader)
+	{
+		int success;
+		char infoLog[512];
+		glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+		if (!success)
+		{
+			glGetShaderInfoLog(shader, 512, NULL, infoLog);
+			std::cerr << "ERROR::SHADER::COMPILATION_FAILED\n" << infoLog << std::endl;
+		}
+	}
+
+	void checkProgramLinking(unsigned int program)
+	{
+		int success;
+		char infoLog[512];
+		glGetProgramiv(program, GL_LINK_STATUS, &success);
+		if (!success)
+		{
+			glGetProgramInfoLog(program, 512, NULL, infoLog);
+			std::cerr << "ERROR::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+		}
+	}
+	//}
+
+	
 	
 	void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	{
