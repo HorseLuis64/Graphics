@@ -201,6 +201,30 @@ src/openConf.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cube_project.dir/build.make CMakeFiles/Cube_project.dir/src/openConf.cpp.s
 .PHONY : src/openConf.cpp.s
 
+src/texLoader.o: src/texLoader.cpp.o
+.PHONY : src/texLoader.o
+
+# target to build an object file
+src/texLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cube_project.dir/build.make CMakeFiles/Cube_project.dir/src/texLoader.cpp.o
+.PHONY : src/texLoader.cpp.o
+
+src/texLoader.i: src/texLoader.cpp.i
+.PHONY : src/texLoader.i
+
+# target to preprocess a source file
+src/texLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cube_project.dir/build.make CMakeFiles/Cube_project.dir/src/texLoader.cpp.i
+.PHONY : src/texLoader.cpp.i
+
+src/texLoader.s: src/texLoader.cpp.s
+.PHONY : src/texLoader.s
+
+# target to generate assembly for a file
+src/texLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cube_project.dir/build.make CMakeFiles/Cube_project.dir/src/texLoader.cpp.s
+.PHONY : src/texLoader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,6 +243,9 @@ help:
 	@echo "... src/openConf.o"
 	@echo "... src/openConf.i"
 	@echo "... src/openConf.s"
+	@echo "... src/texLoader.o"
+	@echo "... src/texLoader.i"
+	@echo "... src/texLoader.s"
 .PHONY : help
 
 

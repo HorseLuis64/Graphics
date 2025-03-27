@@ -81,12 +81,12 @@ clean: CMakeFiles/Cube_project.dir/clean
 CMakeFiles/Cube_project.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cube_project.dir/build.make CMakeFiles/Cube_project.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cube_project.dir/build.make CMakeFiles/Cube_project.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/horseluis/HorseDev/Graphics/build/CMakeFiles --progress-num=1,2,3,4 "Built target Cube_project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/horseluis/HorseDev/Graphics/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target Cube_project"
 .PHONY : CMakeFiles/Cube_project.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Cube_project.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/horseluis/HorseDev/Graphics/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/horseluis/HorseDev/Graphics/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Cube_project.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/horseluis/HorseDev/Graphics/build/CMakeFiles 0
 .PHONY : CMakeFiles/Cube_project.dir/rule

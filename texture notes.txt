@@ -1,0 +1,93 @@
+TIME FOR TEXTURES:
+
+textures have their oown coordinates, these are normalized
+but in a range of 0,0 to 1,1, so, we need to give to our 
+vertices, a position of this, if we have a triangle, one goes to
+0,0, later to 0,5, 1,0, to 1,0, fully covering the mesh with
+the texture, but, if we have positions (i suppose, its our mesh positions
+but, i dont know yet)
+then we need to fill that gap, open gl offer us options like
+GL_REPEAT = you know, repeat the image several times like those
+cursed TEXTURES
+GL_MIRRORED_REPEAT = same, but the image inverts himself every repetition
+gl_clamp to edge = the horrible form of strethcing the borders
+gl_clamp_to Borted = leave it in the center, at a user-specified bordercolor
+
+in opengl, to indicate opengl the parameters of the texture we use 
+glTexParameter(type of texture (2d or 3d), the axis (s = x t = y), and the
+mode of wraping (the above ones))
+
+glTexParameter(GL_TEXTURE_, GL_TEXTURE_WRAP_, GL_MIRRORED_REPEAT)
+
+more:
+first argument: texture target
+second argument: what option we want to set and for which axis
+(wrap = option letters = axis)
+third argument: the wraping mode
+
+texel = texture pixel
+
+TEXTURE FILTERING
+ok, so, texture coordinates not depend on resolution
+but can be any floating point between 0 and 1, so, opengl needs
+to figure out wich texel draw according to the texture coordinates
+think we have 800, 800, but our texCoord is 0.564464, there is no
+pixel of thath number, now we have to determine wich pixel draw
+
+there are two modes of determine this, with linear, that mades an interpolation of the 4
+more close pixels, it made it blur, and the other make its for the closest pixel, it looks
+more pixelated but with more quality (nearest) so its GL_LINEAR AND GL_NEAREST
+
+MIPMAPS
+this is juicy, remember the concept of lowing quality to models 
+per distance, well, thats it, mipmaps are a collection of textures
+that, at a certain distance, it will change changing the quality,
+this solves two problems, one, that opengl will not have difficulties
+for retrieven a texel to the texture (imagine a high quality texture that
+its in a 10 x 10 pixel size, problematic isnt it?), and, second and MOST
+important, performance, gpu doesnt need to make high calculations
+this is a little confussing
+we have 4 modes to change the way of filtering between mipmaps,
+because when switching normally between mimaps, there appears some 
+sharp artifacts (???) (reminder: plea to chatgpt for explanation)
+GL_NEAREST_MIPMAP_NEAREST
+GL_LINEAR_MIPMAP_NEAREST
+GL_NEAREST_MIPMAP_LINEAR
+GL_LINEAR_MIPMAP_LINEAR
+
+i think the first its to choose wich mipmap changing will use, and the
+second to choose how to clamp the new texture to the old texture
+
+now, time to the texture "buffer"
+
+as usual, genTextruce, bind texture to GL_TEXTURE_2D, and, configure it,
+in thos case is glTexImage2D(9 arguments)
+
+1. specifie the texture target, setting this to texture_2d means
+this operations will generate a texture on the currently bound texture
+object at the same target (so, looks what texture is already bound, if it
+matches the type (1d,2d,3d), then, go for it)
+
+2.the mipmap level, so, specifies, how mani levels of mipmap you want
+to use, since we just have one, (just one tex version), its 0
+
+3. how we wanna store the texture, in what kind of data, in this
+case, is RGB
+
+4 and 5. the width and height of the texture
+
+6. 0, just let it in 0 (some legacy stuff)
+
+7 and 8. basically the first is to tell what type of format its 
+the source image, in this case rgb, and the second, is how we store it,
+we store it in chars, so we tell them as bytes
+
+last is the, well, texture data, stupid
+
+and texmipmap
+
+well, after all of this, we continue with the configuration of the glVertexAttribPointer
+of the VAO, setting the coords of the texture know , we configure
+that in the vertex shader script and set the texture
+to the fragment shader
+

@@ -11,8 +11,11 @@ add_executable(Cube_project
 src/main.cpp
 includes/glad.c 
 includes/glad.h
+includes/stb_image.h
 src/openConf.cpp
-src/openConf.h)
+src/openConf.h
+src/texLoader.h
+src/texLoader.cpp)
 
 target_link_libraries(Cube_project 
 glfw

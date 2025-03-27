@@ -16,5 +16,11 @@
   "command": "/usr/bin/g++   -g -o CMakeFiles/Cube_project.dir/src/openConf.cpp.o -c /home/horseluis/HorseDev/Graphics/src/openConf.cpp",
   "file": "/home/horseluis/HorseDev/Graphics/src/openConf.cpp",
   "output": "CMakeFiles/Cube_project.dir/src/openConf.cpp.o"
+},
+{
+  "directory": "/home/horseluis/HorseDev/Graphics/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/Cube_project.dir/src/texLoader.cpp.o -c /home/horseluis/HorseDev/Graphics/src/texLoader.cpp",
+  "file": "/home/horseluis/HorseDev/Graphics/src/texLoader.cpp",
+  "output": "CMakeFiles/Cube_project.dir/src/texLoader.cpp.o"
 }
 ]

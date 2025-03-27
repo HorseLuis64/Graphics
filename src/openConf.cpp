@@ -46,6 +46,8 @@ namespace opg
 		glLinkProgram(shaderProgram);
 		checkProgramLinking(shaderProgram);
 	
+		this->shaderProgram = shaderProgram;
+
 		glDeleteShader(vertexShader);
 		glDeleteShader(fragmentShader);
 	}

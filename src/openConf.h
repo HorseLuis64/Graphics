@@ -1,10 +1,13 @@
-#pragma once
+#ifndef SHADER_H
+#define SHADER_H
+
 #include "../includes/glad.h"
 #include <GLFW/glfw3.h>
 #include<iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <filesystem>
 namespace opg
 {
 
@@ -17,7 +20,7 @@ namespace opg
 			const char* vShaderSource;
 			unsigned int vertexShader;
 			unsigned int fragmentShader;
-			
+			unsigned int shaderProgram;
 			void createShaders();
 		public:
 			Shader(const char* vShaderPat, const char *fShaderPat);
@@ -32,3 +35,5 @@ namespace opg
 	std::string loadShaderSource(const char* filePath);
 	GLFWwindow* glfwConfiguration(int a, int b);
 };
+
+#endif
