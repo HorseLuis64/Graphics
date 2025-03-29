@@ -11,6 +11,7 @@ add_executable(Cube_project
 src/main.cpp
 includes/glad.c 
 includes/glad.h
+includes/stb_image.h
 src/openConf.cpp
 src/openConf.h)
 

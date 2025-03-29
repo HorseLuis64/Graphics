@@ -1,10 +1,12 @@
 #include "openConf.h"
 #include <cmath>
 
-const char* vertexShaderCode = "/home/horseluis/HorseDev/Graphics/src/vertexShader.glsl";
+#define STB_IMAGE_IMPLEMENTATION
+#include "../includes/stb_image.h"
+const char* vertexShaderCode = "/home/horseluis/HorseDev/fixthis/Graphics/src/vertexShader.glsl";
 //const char* vertexShaderSource = vertexShaderCode.c_str();
 
-const char* fragmentShaderCode = "/home/horseluis/HorseDev/Graphics/src/fragmentShader.glsl";
+const char* fragmentShaderCode = "/home/horseluis/HorseDev/fixthis/Graphics/src/fragmentShader.glsl";
 //const char* fragmentShaderSource = fragmentShaderCode.c_str();
 
 float vertices[] =
@@ -38,6 +40,22 @@ int main()
    
     shader.createShaderProgram(shaderProgram);
     
+    unsigned int texture;
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_NEAREST);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    int width, height, nrChannels;
+
+    unsigned char* data = stbi_load("/home/horseluis/HorseDev/fixthis/Graphics/assets/omni.jpeg", &width, &height, &nrChannels, 0);
+
+    
+
     // Setting up the vertex data and buffers
     unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &VAO);
