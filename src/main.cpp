@@ -53,8 +53,9 @@ int main()
     int width, height, nrChannels;
 
     unsigned char* data = stbi_load("/home/horseluis/HorseDev/fixthis/Graphics/assets/omni.jpeg", &width, &height, &nrChannels, 0);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
 
-    
 
     // Setting up the vertex data and buffers
     unsigned int VBO, VAO, EBO;
@@ -79,6 +80,7 @@ int main()
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,  6 * sizeof(float), (void*)( 3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
+    
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
