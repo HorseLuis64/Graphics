@@ -11,10 +11,10 @@ const char* fragmentShaderCode = "/home/horseluis/HorseDev/fixthis/Graphics/src/
 
 float vertices[] =
 {
-    -0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
-     0.5f,  0.5f, 0.0f,   0.0f, 0.0f, 0.0f,
-     0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 0.0f,
-    -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 0.0f
+    -0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,    0.0f, 0.0f, 
+     0.5f,  0.5f, 0.0f,   0.0f, 0.0f, 0.0f,    0.0f, 1.0f, 
+     0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 0.0f,    1.0f, 1.0f,
+    -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 0.0f,    1.0f, 0.0f
 };
 
 unsigned int indices[] = 
@@ -74,10 +74,10 @@ int main()
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), &indices, GL_STATIC_DRAW);
     //4.Then set the vertex attribute pointers (configure teh VAO)
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,  6 * sizeof(float), (void*)( 3 * sizeof(float)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,  8 * sizeof(float), (void*)( 3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
     
