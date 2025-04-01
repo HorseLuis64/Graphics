@@ -46,7 +46,7 @@ namespace opg
 		glLinkProgram(shaderProgram);
 		checkProgramLinking(shaderProgram);
 	
-		this->shaderProgram = shaderProgram;
+		this->id = shaderProgram;
 
 		glDeleteShader(vertexShader);
 		glDeleteShader(fragmentShader);
@@ -61,6 +61,8 @@ namespace opg
 	{
 		return fragmentShader;
 	}
+
+	unsigned int Shader::Id(){return id;}
 
 	std::string loadShaderSource(const char* filePath) {
 		std::ifstream file(filePath);

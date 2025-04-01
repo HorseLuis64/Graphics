@@ -11,13 +11,14 @@ const char* vertexShaderCode = "/home/horseluis/HorseDev/Graphics/src/vertexShad
 std::string fPath = actPath + "../src/fragmentShader.fs";
 const char* fragmentShaderCode = "/home/horseluis/HorseDev/Graphics/src/fragmentShader.fs";
 //const char* fragmentShaderSource = fragmentShaderCode.c_str();
+int counter = 0;
 
 float vertices[] =
 {
-    -0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,    0.0f, 0.0f, 
-     0.5f,  0.5f, 0.0f,   0.0f, 0.0f, 0.0f,    0.0f, 1.0f, 
-     0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 0.0f,    1.0f, 1.0f,
-    -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 0.0f,    1.0f, 0.0f
+    -0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,    0.0f, 0.0f,  0.0f, 0.0f,
+     0.5f,  0.5f, 0.0f,   0.0f, 1.0f, 0.0f,    1.0f, 0.0f,  1.0f, 0.0f,
+     0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,    1.0f, 1.0f,  1.0f, 1.0f,
+    -0.5f, -0.5f, 0.0f,   0.4f, 0.5f, 1.0f,    0.0f, 1.0f,  0.0f, 1.0f
 };
 
 float texCoord[] = 
@@ -34,11 +35,26 @@ unsigned int indices[] =
     1, 2, 3
 };
 
-void takeInput(GLFWwindow* window)
+bool now = true;
+void takeInput(GLFWwindow* window, int loc)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
     {
         glfwSetWindowShouldClose(window, true);
+    }
+    if(glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS)
+    {
+        glUniform1f(loc, 0.0f);
+        if(now)
+        {
+            counter++;
+        }
+        now = false;
+    }
+    else
+    {
+        now = true;
+        glUniform1f(loc, 1.0f);
     }
 }
 
@@ -53,9 +69,52 @@ int main()
    
     shader.createShaderProgram(shaderProgram);
     
- 
     
+    //generating the texture
+    unsigned int texture;
+    glGenTextures(1, &texture);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture);
 
+
+    //texture configuration
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    
+    //method of determination of texel for magnifiyinh og minifyng
+    //(sacaling up or down the image)
+    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+    //configurarition of mipmaps behaviour
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_LINEAR);   
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+
+    int width, height, nrChannels;
+    
+    unsigned char* data = img::loadImage("/home/horseluis/HorseDev/Graphics/assets/omni.jpeg", width, height, nrChannels);
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D); //i know what does, but, you know
+
+    stbi_image_free(data);
+    
+    unsigned int texture2; 
+    glGenTextures(1, &texture2);
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, texture2);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    
+    width = 0;
+    height = 0;
+    nrChannels = 0;
+    data = img::loadImage("/home/horseluis/HorseDev/Graphics/assets/man.jpeg", width, height, nrChannels);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    stbi_image_free(data);
     // Setting up the vertex data and buffers
     unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &VAO);
@@ -73,71 +132,50 @@ int main()
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), &indices, GL_STATIC_DRAW);
     //4.Then set the vertex attribute pointers (configure teh VAO)
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,  8 * sizeof(float), (void*)( 3 * sizeof(float)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,  10 * sizeof(float), (void*)( 3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)(6 * sizeof(float)));
     glEnableVertexAttribArray(2);
+
+    glVertexAttribPointer(3,2, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)(8 * sizeof(float)));
+    glEnableVertexAttribArray(3);   
 
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     
 
-
-    //generating the texture
-    unsigned int texture;
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-
-
-    //texture configuration
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     
-    //method of determination of texel for magnifiyinh og minifyng
-    //(sacaling up or down the image)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-
-    //configurarition of mipmaps behaviour
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);   
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-
-
-    int width, height, nrChannels;
-    unsigned char* data = img::loadImage("/home/horseluis/HorseDev/Graphics/assets/omni.jpeg", width, height, nrChannels);
-
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-    glGenerateMipmap(GL_TEXTURE_2D); //i know what does, but, you know
-
-    stbi_image_free(data);
-
-    int xLocation = glGetUniformLocation(shaderProgram, "xValue");
     
     glUseProgram(shaderProgram);
-    glBindTexture(GL_TEXTURE_2D, texture);
+    //setting the unit of each sampler2d (glactive0 / 1), 2, 3...
+    glUniform1i(glGetUniformLocation(shader.Id(), "texture1"), 0);
+    glUniform1i(glGetUniformLocation(shader.Id(), "texture2"), 1);
+    //glBindTexture(GL_TEXTURE_2D, texture);
     glBindVertexArray(VAO);
     
-    glUniform1f(xLocation, 0.0f);
-
+    
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, texture2);
     //this mf tells how to draw the shapes, if to
     //do it as a wireframe (lines), or fill the mesh
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+    unsigned int loc = glGetUniformLocation(shader.Id(), "trans");
     // Main render loop
     while (!glfwWindowShouldClose(window))
     {
         //---------------INPUT------------
-        takeInput(window);
+        takeInput(window, loc);
 
         //-------------TODO: PHYSICS-----------
- 
+        
 
         //----------------RENDERING----------
         glClearColor(0.12f, 0.45f, 0.7f, 0.9f);

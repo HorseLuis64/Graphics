@@ -20,13 +20,15 @@ namespace opg
 			const char* vShaderSource;
 			unsigned int vertexShader;
 			unsigned int fragmentShader;
-			unsigned int shaderProgram;
+			unsigned int id;
 			void createShaders();
 		public:
 			Shader(const char* vShaderPat, const char *fShaderPat);
 			~Shader();
 			
 			void createShaderProgram(unsigned int &shaderProgram);
+
+			unsigned int Id();
 			unsigned int getVertex();
 			unsigned int getFragment();
 				
