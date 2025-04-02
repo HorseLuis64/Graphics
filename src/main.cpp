@@ -61,6 +61,7 @@ void takeInput(GLFWwindow* window, int loc)
 
 int main()
 {
+    
     std::cout<<"PATHH == "<<std::filesystem::current_path()<<std::endl;
     GLFWwindow* window = opg::glfwConfiguration(800, 800);
     unsigned int shaderProgram;

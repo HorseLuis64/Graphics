@@ -74,8 +74,8 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o: /home/horseluis/HorseDev/Graphics/sr
   /home/horseluis/HorseDev/Graphics/includes/glad.h \
   /home/horseluis/HorseDev/Graphics/includes/khrplatform.h \
   /home/horseluis/HorseDev/Graphics/includes/stb_image.h \
-  /home/horseluis/HorseDev/Graphics/src/openConf.h \
-  /home/horseluis/HorseDev/Graphics/src/texLoader.h \
+  /home/horseluis/HorseDev/Graphics/includes/openConf.h \
+  /home/horseluis/HorseDev/Graphics/includes/texLoader.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -329,7 +329,7 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o: /home/horseluis/HorseDev/Graphics/sr
 CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphics/src/openConf.cpp \
   /home/horseluis/HorseDev/Graphics/includes/glad.h \
   /home/horseluis/HorseDev/Graphics/includes/khrplatform.h \
-  /home/horseluis/HorseDev/Graphics/src/openConf.h \
+  /home/horseluis/HorseDev/Graphics/includes/openConf.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -557,7 +557,7 @@ CMakeFiles/Cube_project.dir/src/openConf.cpp.o: /home/horseluis/HorseDev/Graphic
 
 CMakeFiles/Cube_project.dir/src/texLoader.cpp.o: /home/horseluis/HorseDev/Graphics/src/texLoader.cpp \
   /home/horseluis/HorseDev/Graphics/includes/stb_image.h \
-  /home/horseluis/HorseDev/Graphics/src/texLoader.h \
+  /home/horseluis/HorseDev/Graphics/includes/texLoader.h \
   /usr/include/alloca.h \
   /usr/include/assert.h \
   /usr/include/c++/13/bit \
@@ -817,8 +817,6 @@ CMakeFiles/Cube_project.dir/src/texLoader.cpp.o: /home/horseluis/HorseDev/Graphi
 
 /usr/include/asm-generic/errno-base.h:
 
-/usr/include/c++/13/bits/move.h:
-
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
 /home/horseluis/HorseDev/Graphics/includes/stb_image.h:
@@ -891,6 +889,8 @@ CMakeFiles/Cube_project.dir/src/texLoader.cpp.o: /home/horseluis/HorseDev/Graphi
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
+/home/horseluis/HorseDev/Graphics/includes/openConf.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/include/c++/13/bits/refwrap.h:
@@ -900,6 +900,10 @@ CMakeFiles/Cube_project.dir/src/texLoader.cpp.o: /home/horseluis/HorseDev/Graphi
 /usr/include/strings.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/home/horseluis/HorseDev/Graphics/includes/texLoader.h:
+
+/usr/include/c++/13/bits/stl_construct.h:
 
 /usr/include/c++/13/bits/requires_hosted.h:
 
@@ -938,12 +942,6 @@ CMakeFiles/Cube_project.dir/src/texLoader.cpp.o: /home/horseluis/HorseDev/Graphi
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
 /usr/include/features-time64.h:
-
-/home/horseluis/HorseDev/Graphics/src/texLoader.h:
-
-/usr/include/c++/13/typeinfo:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
 
 /usr/include/c++/13/bits/ostream.tcc:
 
@@ -1011,6 +1009,8 @@ CMakeFiles/Cube_project.dir/src/texLoader.cpp.o: /home/horseluis/HorseDev/Graphi
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
+/usr/include/c++/13/bits/move.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/time.h:
@@ -1059,8 +1059,6 @@ CMakeFiles/Cube_project.dir/src/texLoader.cpp.o: /home/horseluis/HorseDev/Graphi
 
 /usr/include/c++/13/bits/stl_algobase.h:
 
-/usr/include/c++/13/bits/stl_construct.h:
-
 /usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
@@ -1100,8 +1098,6 @@ CMakeFiles/Cube_project.dir/src/texLoader.cpp.o: /home/horseluis/HorseDev/Graphi
 /usr/include/c++/13/codecvt:
 
 /usr/include/c++/13/ctime:
-
-/home/horseluis/HorseDev/Graphics/src/openConf.h:
 
 /usr/include/c++/13/cstdint:
 
@@ -1232,6 +1228,10 @@ CMakeFiles/Cube_project.dir/src/texLoader.cpp.o: /home/horseluis/HorseDev/Graphi
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
+
+/usr/include/c++/13/typeinfo:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
 

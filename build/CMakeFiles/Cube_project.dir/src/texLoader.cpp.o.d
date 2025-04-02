@@ -1,8 +1,8 @@
 CMakeFiles/Cube_project.dir/src/texLoader.cpp.o: \
  /home/horseluis/HorseDev/Graphics/src/texLoader.cpp \
  /usr/include/stdc-predef.h \
- /home/horseluis/HorseDev/Graphics/src/texLoader.h \
- /home/horseluis/HorseDev/Graphics/src/../includes/stb_image.h \
+ /home/horseluis/HorseDev/Graphics/includes/texLoader.h \
+ /home/horseluis/HorseDev/Graphics/includes/../includes/stb_image.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

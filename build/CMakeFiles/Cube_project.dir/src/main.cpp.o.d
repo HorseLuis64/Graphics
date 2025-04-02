@@ -1,9 +1,9 @@
 CMakeFiles/Cube_project.dir/src/main.cpp.o: \
  /home/horseluis/HorseDev/Graphics/src/main.cpp \
  /usr/include/stdc-predef.h \
- /home/horseluis/HorseDev/Graphics/src/openConf.h \
- /home/horseluis/HorseDev/Graphics/src/../includes/glad.h \
- /home/horseluis/HorseDev/Graphics/src/../includes/khrplatform.h \
+ /home/horseluis/HorseDev/Graphics/includes/openConf.h \
+ /home/horseluis/HorseDev/Graphics/includes/../includes/glad.h \
+ /home/horseluis/HorseDev/Graphics/includes/../includes/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -180,8 +180,8 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/unique_ptr.h \
  /usr/include/c++/13/ext/aligned_buffer.h \
  /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
- /home/horseluis/HorseDev/Graphics/src/texLoader.h \
- /home/horseluis/HorseDev/Graphics/src/../includes/stb_image.h \
+ /home/horseluis/HorseDev/Graphics/includes/texLoader.h \
+ /home/horseluis/HorseDev/Graphics/includes/../includes/stb_image.h \
  /usr/include/c++/13/stdlib.h /usr/include/c++/13/cmath \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
