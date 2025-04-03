@@ -39,8 +39,13 @@ unsigned int indices[] =
 };
 
 bool now = true;
-void takeInput(GLFWwindow* window, int loc)
+float speed = 0.01f;
+bool movePress;
+glm::vec2 dir = glm::vec2(0.0f,0.0f);
+void takeInput(GLFWwindow* window, int loc, glm::mat4 &trans)
 {
+    dir = glm::vec2(0.0f,0.0f);
+    movePress = false;
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
     {
         glfwSetWindowShouldClose(window, true);
@@ -58,6 +63,35 @@ void takeInput(GLFWwindow* window, int loc)
     {
         now = true;
         glUniform1f(loc, 1.0f);
+    }
+    if(glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+    {
+        dir.y = 1;   
+        movePress = true;
+    }
+    if(glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+    {
+        dir.y = -1;
+        movePress = true;
+    }
+    
+    if(glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+    {
+        dir.x = -1;
+        movePress = true;
+    }
+    
+    if(glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
+    {
+        dir.x = 1;
+        movePress = true;
+    }
+    
+
+    if(movePress == false)
+    {
+        dir = glm::vec2(0.0f,0.0f);
+        //trans = glm::mat4(1.0f);
     }
 }
 
@@ -187,7 +221,7 @@ int main()
     while (!glfwWindowShouldClose(window))
     {
         //---------------INPUT------------
-        takeInput(window, loc);
+        takeInput(window, loc, trans);
 
         //-------------TODO: PHYSICS-----------
         
@@ -196,16 +230,23 @@ int main()
         glClearColor(0.12f, 0.45f, 0.7f, 0.9f);
         glClear(GL_COLOR_BUFFER_BIT);
         
-        trans = glm::mat4(1.0f);
+        //trans = glm::mat4(1.0f);
         
-        trans = glm::translate(trans, glm::vec3(0.5f,0.0f,0.0f));
-        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f,0.0f,1.0f));
+        trans = glm::translate(trans, glm::vec3(dir.x,dir.y,0.0f) * speed);
+        //trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f,0.0f,1.0f));
        
         glUniformMatrix4fv(glGetUniformLocation(shader.Id(), "transform"), 1, GL_FALSE, glm::value_ptr(trans));  
 
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT,  0);
 
-
+        /*THIS MAKES ANOTHER IMAGE
+        (dk why)
+        trans = glm::mat4(1.0f);
+        trans = glm::translate(trans, glm::vec3(-0.5f,0.5f,0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "transform"), 1, GL_FALSE, &trans[0][0]);
+        */
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        
         if(angle >= 90.0f)
         {
             angle = 0.0f;
@@ -222,6 +263,7 @@ int main()
         
     }
 
+    
     //this is optional btw, since
     //glfwTerminate do it automatically
     glDeleteVertexArrays(1, &VAO);
