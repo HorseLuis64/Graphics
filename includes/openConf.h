@@ -35,7 +35,7 @@ namespace opg
 	};
 
 	std::string loadShaderSource(const char* filePath);
-	GLFWwindow* glfwConfiguration(int a, int b);
+	GLFWwindow* glfwConfiguration(int a, int b, int c = 0, int d = 0);
 };
 
 #endif

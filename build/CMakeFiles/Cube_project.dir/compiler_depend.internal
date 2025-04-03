@@ -76,12 +76,204 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o
  /home/horseluis/HorseDev/Graphics/includes/glad.h
  /home/horseluis/HorseDev/Graphics/includes/khrplatform.h
  /home/horseluis/HorseDev/Graphics/includes/stb_image.h
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat2x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat2x3.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat2x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat2x4.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat3x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat3x2.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat3x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat3x3.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat3x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat3x4.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat4x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat4x2.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat4x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat4x3.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat4x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat4x4.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double2x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double2x3_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double2x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double2x4_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double3x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double3x2_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double3x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double3x3_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double3x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double3x4_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double4x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double4x2_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double4x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double4x3_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double4x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double4x4_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float2x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float2x3_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float2x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float2x4_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float3x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float3x2_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float3x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float3x3_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float3x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float3x4_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float4x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float4x2_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float4x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float4x3_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float4x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float4x4_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/common.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/func_vector_relational.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/setup.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/vector_relational.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/_fixes.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/_vectorize.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/compute_common.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/func_common.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/func_exponential.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/setup.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_vec1.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_vec1.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/exponential.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/func_geometric.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/geometric.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/func_matrix.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/setup.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/mat2x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/mat2x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/mat3x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/mat3x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/mat3x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/mat4x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/mat4x3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/mat4x4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/matrix.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/compute_vector_relational.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/setup.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/setup.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat2x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_mat2x2.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_vec2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_vec2.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_vec3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_vec3.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_vec4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_vec4.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/setup.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/scalar_int_sized.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/scalar_uint_sized.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double2x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_double2x2_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float2x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_float2x2_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_bool2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_bool2_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_bool3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_bool3_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_bool4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_bool4_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_double2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_double2_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_double3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_double3_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_double4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_double4_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_float2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_float2_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_float3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_float3_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_float4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_float4_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_int2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_int2_sized.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_int3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_int3_sized.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_int4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_int4_sized.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_uint2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_uint2_sized.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_uint3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_uint3_sized.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_uint4.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_uint4_sized.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/simd/platform.h
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/_fixes.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/func_integer.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/func_packing.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/func_trigonometric.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/qualifier.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/setup.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_half.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_half.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/fwd.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/glm.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/setup.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/scalar_constants.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/scalar_constants.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/gtc/constants.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/gtc/constants.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_clip_space.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_clip_space.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_projection.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_projection.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_transform.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/matrix_transform.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/setup.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_relational.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_relational.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/setup.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_float.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_quat.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/detail/type_quat.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_geometric.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_geometric.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_common.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_common.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_double.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_double_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_float.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_float_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_transform.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_transform.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_trigonometric.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/quaternion_trigonometric.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_bool1.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_bool1_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_double1.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_double1_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_float1.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_float1_precision.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_int1.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_int1_sized.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_relational.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_relational.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_uint1.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/ext/vector_uint1_sized.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/gtc/epsilon.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/gtc/epsilon.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/gtc/quaternion.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/gtc/quaternion.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/gtc/vec1.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/gtc/matrix_transform.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/gtc/matrix_transform.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/gtc/type_ptr.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/gtc/type_ptr.inl
+ /home/horseluis/HorseDev/Graphics/includes/glm/integer.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/mat2x2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/packing.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/trigonometric.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/vec2.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/vec3.hpp
+ /home/horseluis/HorseDev/Graphics/includes/glm/vec4.hpp
  /home/horseluis/HorseDev/Graphics/includes/openConf.h
  /home/horseluis/HorseDev/Graphics/includes/texLoader.h
  /usr/include/GLFW/glfw3.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
+ /usr/include/assert.h
  /usr/include/c++/13/backward/binders.h
  /usr/include/c++/13/bit
  /usr/include/c++/13/bits/alloc_traits.h
@@ -156,8 +348,11 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o
  /usr/include/c++/13/bits/uses_allocator.h
  /usr/include/c++/13/bits/uses_allocator_args.h
  /usr/include/c++/13/bits/utility.h
+ /usr/include/c++/13/cassert
  /usr/include/c++/13/cctype
  /usr/include/c++/13/cerrno
+ /usr/include/c++/13/cfloat
+ /usr/include/c++/13/climits
  /usr/include/c++/13/clocale
  /usr/include/c++/13/cmath
  /usr/include/c++/13/codecvt
@@ -165,6 +360,7 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o
  /usr/include/c++/13/cstdint
  /usr/include/c++/13/cstdio
  /usr/include/c++/13/cstdlib
+ /usr/include/c++/13/cstring
  /usr/include/c++/13/ctime
  /usr/include/c++/13/cwchar
  /usr/include/c++/13/cwctype
@@ -220,7 +416,9 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o
  /usr/include/features-time64.h
  /usr/include/features.h
  /usr/include/libintl.h
+ /usr/include/limits.h
  /usr/include/linux/errno.h
+ /usr/include/linux/limits.h
  /usr/include/locale.h
  /usr/include/math.h
  /usr/include/pthread.h
@@ -229,6 +427,8 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o
  /usr/include/stdint.h
  /usr/include/stdio.h
  /usr/include/stdlib.h
+ /usr/include/string.h
+ /usr/include/strings.h
  /usr/include/time.h
  /usr/include/wchar.h
  /usr/include/wctype.h
@@ -247,12 +447,15 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h
  /usr/include/x86_64-linux-gnu/bits/locale.h
  /usr/include/x86_64-linux-gnu/bits/long-double.h
  /usr/include/x86_64-linux-gnu/bits/math-vector.h
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h
+ /usr/include/x86_64-linux-gnu/bits/posix1_lim.h
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h
@@ -298,11 +501,13 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h
  /usr/include/x86_64-linux-gnu/bits/typesizes.h
  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/x86_64-linux-gnu/bits/wchar.h
  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h
  /usr/include/x86_64-linux-gnu/bits/wordsize.h
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h
  /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h
@@ -324,9 +529,12 @@ CMakeFiles/Cube_project.dir/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/sys/select.h
  /usr/include/x86_64-linux-gnu/sys/single_threaded.h
  /usr/include/x86_64-linux-gnu/sys/types.h
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 CMakeFiles/Cube_project.dir/src/openConf.cpp.o
  /home/horseluis/HorseDev/Graphics/src/openConf.cpp

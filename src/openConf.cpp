@@ -79,6 +79,10 @@ namespace opg
 
 }
 
+
+//GLFW__WINDOW__CONFIGURATIONS----------------
+
+
 namespace opg 
 {
 
@@ -117,8 +121,13 @@ namespace opg
 	}
 
 
-	GLFWwindow* glfwConfiguration(int a, int b)
+	GLFWwindow* glfwConfiguration(int a, int b, int c , int d )
 	{
+		if(c || d == 0)
+		{
+			c = a;
+			d = b;
+		}
 		glfwInit();
 		//configure aspects of glfw, first argument the option, second the setting
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -148,7 +157,7 @@ namespace opg
 
 
 		//tells opengl the area of rendering
-		glViewport(0, 0, 800, 800);
+		glViewport(0, 0, a, b);
 
 		//indicate opengl this is the funcion to resize a window, fill automatic other parameters
 		//abstraction

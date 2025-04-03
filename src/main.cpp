@@ -1,6 +1,9 @@
-#include "openConf.h"
-#include "texLoader.h"
+#include <openConf.h>
+#include <texLoader.h>
 #include <cmath>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 std::string actPath = std::filesystem::current_path(); 
 
@@ -15,10 +18,10 @@ int counter = 0;
 
 float vertices[] =
 {
-    -0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,    0.0f, 0.0f,  0.0f, 0.0f,
-     0.5f,  0.5f, 0.0f,   0.0f, 1.0f, 0.0f,    1.0f, 0.0f,  1.0f, 0.0f,
-     0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,    1.0f, 1.0f,  1.0f, 1.0f,
-    -0.5f, -0.5f, 0.0f,   0.4f, 0.5f, 1.0f,    0.0f, 1.0f,  0.0f, 1.0f
+    -0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,    0.2f, 0.0f,  0.0f, 0.0f,
+     0.5f,  0.5f, 0.0f,   0.0f, 1.0f, 0.0f,    0.8f, 0.0f,  1.0f, 0.0f,
+     0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,    0.8f, 1.0f,  1.0f, 1.0f,
+    -0.5f, -0.5f, 0.0f,   0.4f, 0.5f, 1.0f,    0.2f, 1.0f,  0.0f, 1.0f
 };
 
 float texCoord[] = 
@@ -169,7 +172,18 @@ int main()
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     unsigned int loc = glGetUniformLocation(shader.Id(), "trans");
+
+    //creating vector
+    glm::vec4 vec(1.0f, 0.0f,0.0f,1.0f);
+    //an identity matrix ( the diagonal )
+    glm::mat4 trans = glm::mat4(1.0f);
+    
+    //vec = trans * vec;
+
+    //trans = glm::scale(trans, glm::vec3(0.5f,0.5f,0.5f));
+    std::cout<<vec.x<< vec.y<<vec.z;
     // Main render loop
+    float angle = 0.0f;
     while (!glfwWindowShouldClose(window))
     {
         //---------------INPUT------------
@@ -181,15 +195,23 @@ int main()
         //----------------RENDERING----------
         glClearColor(0.12f, 0.45f, 0.7f, 0.9f);
         glClear(GL_COLOR_BUFFER_BIT);
-
+        
+        trans = glm::mat4(1.0f);
+        
+        trans = glm::translate(trans, glm::vec3(0.5f,0.0f,0.0f));
+        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f,0.0f,1.0f));
        
+        glUniformMatrix4fv(glGetUniformLocation(shader.Id(), "transform"), 1, GL_FALSE, glm::value_ptr(trans));  
 
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT,  0);
 
 
+        if(angle >= 90.0f)
+        {
+            angle = 0.0f;
+        }
 
-
-
+        angle++;
         //this is to find an uniform variable
        // vertexColorLocation = glGetUniformLocation(shaderProgram, "sexyColor");
        // glUniform4f(vertexColorLocation, 0.0f, green, 0.0f, 1.0f);

@@ -1,0 +1,38 @@
+TIME FOR TRANSFORMATIONS (finally)
+
+MATRIX
+yep, math, so, basically, as obvius changing the parameters via opengl
+of every object its very expensive computationally, so, instead, we
+use, matrix transformacions, usually 4x4, this allow us to make several
+calculations in just one step, example
+
+1. 1 1 0
+1 1. 1 0
+1 1 1. 0
+1 1 1 1
+
+we use all the values of the columns to make translations, rotations, and scaling
+we use the library GLM (gl math), following the next syntaxis
+
+                    (identity matrix)
+glm::mat4 name = glm::mat4(1.0f)
+
+this allow us to create a matrix, and declare it as a identity matrix
+(the principale diagonal is filled with the value)
+
+glm::mat4 name = glm::translate/rotate/scale
+
+each one needs a certain number of parameters, this are
+
+translate
+1.the matrix we want to transform
+2. the matrix transformation 
+
+scale
+1.the mat to transform
+2. the mat transformation
+
+rotate (shit)
+1.the mat to transform
+2. the angle (in radians)
+3, the mat transformation
