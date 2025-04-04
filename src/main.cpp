@@ -16,12 +16,48 @@ const char* fragmentShaderCode = "/home/horseluis/HorseDev/Graphics/src/fragment
 //const char* fragmentShaderSource = fragmentShaderCode.c_str();
 int counter = 0;
 
-float vertices[] =
-{
-    -0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,    0.2f, 0.0f,  0.0f, 0.0f,
-     0.5f,  0.5f, 0.0f,   0.0f, 1.0f, 0.0f,    0.8f, 0.0f,  1.0f, 0.0f,
-     0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,    0.8f, 1.0f,  1.0f, 1.0f,
-    -0.5f, -0.5f, 0.0f,   0.4f, 0.5f, 1.0f,    0.2f, 1.0f,  0.0f, 1.0f
+float vertices[] = {
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
 };
 
 float texCoord[] = 
@@ -41,37 +77,41 @@ unsigned int indices[] =
 bool now = true;
 float speed = 0.01f;
 bool movePress;
-glm::vec2 dir = glm::vec2(0.0f,0.0f);
-void takeInput(GLFWwindow* window, int loc, glm::mat4 &trans)
+glm::vec3 dir = glm::vec3(0.0f,0.0f, 0.0f);
+void takeInput(GLFWwindow* window, int loc, int loc1, glm::mat4 &model)
 {
-    dir = glm::vec2(0.0f,0.0f);
+    dir = glm::vec3(0.0f,0.0f, 0.0f);
     movePress = false;
+    //model = glm::scale(model, glm::vec3(1.0f,1.0f,1.0f));
+    
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
     {
         glfwSetWindowShouldClose(window, true);
     }
     if(glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS)
     {
+        
         glUniform1f(loc, 0.0f);
+        
         if(now)
         {
+            //model = glm::scale(model, glm::vec3(1.0f, 1.5f, 0.0f));
             counter++;
         }
         now = false;
     }
-    else
-    {
+    else{
         now = true;
         glUniform1f(loc, 1.0f);
     }
     if(glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
     {
-        dir.y = 1;   
+        dir.z = 1;   
         movePress = true;
     }
     if(glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
     {
-        dir.y = -1;
+        dir.z = -1;
         movePress = true;
     }
     
@@ -90,11 +130,24 @@ void takeInput(GLFWwindow* window, int loc, glm::mat4 &trans)
 
     if(movePress == false)
     {
-        dir = glm::vec2(0.0f,0.0f);
+        //dir = glm::vec3(0.0f,0.0f);
         //trans = glm::mat4(1.0f);
     }
 }
 
+
+glm::vec3 cubePositions[] = {
+    glm::vec3( 0.0f,  0.0f,  0.0f), 
+    glm::vec3( 2.0f,  5.0f, -15.0f), 
+    glm::vec3(-1.5f, -2.2f, -2.5f),  
+    glm::vec3(-3.8f, -2.0f, -12.3f),  
+    glm::vec3( 2.4f, -0.4f, -3.5f),  
+    glm::vec3(-1.7f,  3.0f, -7.5f),  
+    glm::vec3( 1.3f, -2.0f, -2.5f),  
+    glm::vec3( 1.5f,  2.0f, -2.5f), 
+    glm::vec3( 1.5f,  0.2f, -1.5f), 
+    glm::vec3(-1.3f,  1.0f, -1.5f)  
+};
 
 int main()
 {
@@ -131,6 +184,7 @@ int main()
 
     int width, height, nrChannels;
     
+    stbi_set_flip_vertically_on_load(true);
     unsigned char* data = img::loadImage("/home/horseluis/HorseDev/Graphics/assets/omni.jpeg", width, height, nrChannels);
 
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -148,6 +202,7 @@ int main()
     width = 0;
     height = 0;
     nrChannels = 0;
+    stbi_set_flip_vertically_on_load(true);
     data = img::loadImage("/home/horseluis/HorseDev/Graphics/assets/man.jpeg", width, height, nrChannels);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
     glGenerateMipmap(GL_TEXTURE_2D);
@@ -170,17 +225,17 @@ int main()
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), &indices, GL_STATIC_DRAW);
     //4.Then set the vertex attribute pointers (configure teh VAO)
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,  10 * sizeof(float), (void*)( 3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
+    //glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,  5 * sizeof(float), (void*)( 3 * sizeof(float)));
+    //glEnableVertexAttribArray(1);
 
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)(6 * sizeof(float)));
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(2);
 
-    glVertexAttribPointer(3,2, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)(8 * sizeof(float)));
-    glEnableVertexAttribArray(3);   
+    //glVertexAttribPointer(3,2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(8 * sizeof(float)));
+    //glEnableVertexAttribArray(3);   
 
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -222,7 +277,7 @@ int main()
     //model matrix will be use to aply transformations to the global world
     //space
     glm::mat4 model = glm::mat4(1.0f);
-    model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f,0.0f,0.0f));
+    
 
     //view matrix (the camera matrix), we move the space so the camera
     //can look it
@@ -242,35 +297,55 @@ int main()
     glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, &view[0][0]);
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+    
+    glm::mat4 rot;
 
+    glEnable(GL_DEPTH_TEST);
+    //model = glm::mat4(1.0f);
     while (!glfwWindowShouldClose(window))
     {
         //---------------INPUT------------
-        takeInput(window, loc, trans);
+        takeInput(window, loc, shader.Id(), model);
 
         //-------------TODO: PHYSICS-----------
-        
+        rot = glm::mat4(1.0f);
 
+        rot = glm::rotate(rot, (float) glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+
+       
         //----------------RENDERING----------
         glClearColor(0.12f, 0.45f, 0.7f, 0.9f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         //trans = glm::mat4(1.0f);
         
-        trans = glm::translate(trans, glm::vec3(dir.x,dir.y,0.0f) * speed);
+        //model = glm::translate(model, dir * speed);
         //trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f,0.0f,1.0f));
+        
+       model = glm::mat4(1.0f);
+       model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
+
+       model = glm::scale(model, glm::vec3(0.3f,0.3f,0.3f));
+       glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+       glUniformMatrix4fv(glGetUniformLocation(shader.Id(), "rotation"), 1, GL_FALSE, glm::value_ptr(rot));
+
+       glDrawArrays(GL_TRIANGLES, 0, 36);
+       for(int i = 0; i < 10; i++)
+       {
+        if(i == 0)
+        {
+            continue;
+        }
+        model = glm::mat4(1.0f);
+        rot = glm::mat4(1.0f);
+        model = glm::scale(model, glm::vec3(0.3f,0.3f,0.3f));
+        model = glm::translate(model, cubePositions[i]);
+        rot = glm::rotate(rot, glm::radians(20.0f * i), glm::vec3(0.3f, 1.0f, 0.0f));
+        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Id(), "rotation"), 1, GL_FALSE, glm::value_ptr(rot));
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+       }
        
-        glUniformMatrix4fv(glGetUniformLocation(shader.Id(), "transform"), 1, GL_FALSE, glm::value_ptr(trans));  
-
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT,  0);
-
-        /*THIS MAKES ANOTHER IMAGE
-        (dk why)
-        trans = glm::mat4(1.0f);
-        trans = glm::translate(trans, glm::vec3(-0.5f,0.5f,0.0f));
-        glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "transform"), 1, GL_FALSE, &trans[0][0]);
-        */
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         
         if(angle >= 90.0f)
         {

@@ -13,6 +13,6 @@ uniform float trans;
 void main()
 {
     //built int function that made all for us
-    FragColor = mix(texture(texture1, texCoord), texture(texture2, texCoord1), trans);
+    FragColor = mix(texture(texture1, texCoord), texture(texture2, texCoord), trans);
 }
 
