@@ -1,0 +1,60 @@
+juicy things are here (3d)
+
+COORDINATE SYSTEM
+
+opengl transforms our coordinates based on our viewport, 
+so, there are five types of transformation before getting
+to the fragment shader (all of this occurs in vertexShader)
+
+Local Space (object space)
+world space
+view space (eye space)
+clip space
+screen space (normilized i think?)
+
+first, our vertex coords start in local space, as local coords, then
+are procesed by the world coords, view coords, and clip coords, ending
+up in screen coords, 
+
+local space => [model matrix] => world space => [view matrix]
+=> view space => [projection matrix] => clip space => viewport transform
+=> screen space
+
+local coords: are the relative coords of an object, the coords where it 
+inits
+
+world coords: transform the local coords into coords of the large world
+(all the space)
+
+view space coords: this are converted in such a way tat each coordinates
+is as seen from the cameras pov (is like, the coordinates in the camera,
+not in the screen)
+
+clip coords: these are transformed in a range of -1 to 1 to
+determine with of those will end up in screen, 
+
+screen coords: transforms the normalized coords of the clip, to the 
+range defined in glViewport
+
+FRUSTUM: the pyramid that its form from the pov of the screen and the 3d space
+
+
+IN FRUSTUMS, THERE ARE T2O PLANES, NEAR AND FAR PLANES
+SO, ALL THE SPACE DEFINED IS BY THE FOV (ANGLE OF VIEW)
+ANT THE NEAR AND FAR PLANES
+
+ORTHOGRAPHIC projection
+
+its a cube-tpye of frustum (area of rendering in virtual space),
+that directly maps the coordinates to view space coordinates, so
+it doesnt have perspective or any other effects (useful for 2d)
+
+PERSPECTIVE PROJECTION AND PROJECTION matrix
+
+glm::perspective() // creates frustum that defines the visible space
+(rendering space)
+PARAMETErs:
+1. FOV (defines fov, duh)
+2. aspect ratio (its the relation between width and height)
+3 & 4. are the near and far plane of the frustum, the distance between
+(normally, near = 0.1f  far = 100.00f)
